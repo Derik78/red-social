@@ -1,0 +1,37 @@
+const usersDatabase=[
+    {username:"andres",password:"123",},
+    {username:"caro",password:"456",},{username:"mariana",password:"789",},
+];
+const usersTimeline=[
+    {username:"caro",timeline:"Bebeloper es lo mejor!",},
+    {username:"mariana",timeline:"A mi me gusta mÃ¡s el cafÃ© que el tÃ©",},
+    {username:"andres",timeline:"Yo hoy no quiero trabajar",}
+    ,];
+    
+
+
+let ingresoUsuario = prompt('Ingrese su usuario');
+let ingresoPassword = prompt('Ingrese su contraseña');
+
+// Comparar propiedades individuales
+function signIn(ingresoUsuario, ingresoPassword){
+let autenticacion=false;
+for (i=0;i<usersDatabase.length;i++){
+if ((ingresoUsuario === usersDatabase[i].username && ingresoPassword === usersDatabase[i].password)  ) {
+    autenticacion=true
+    console.log('Ingreso aprobado');
+    console.log(`Bienvenido, ${ingresoUsuario} te estabamos esperando`)
+        for(r=0;r<usersTimeline.length;r++){
+            if (ingresoUsuario == usersTimeline[r].username){
+                console.log(usersTimeline[r].timeline)
+                break;
+            }
+        }
+        break
+    }
+}
+    if (autenticacion=false){
+    console.log('Ingreso denegado');
+                }       
+}
+signIn(ingresoUsuario,ingresoPassword);
